@@ -1,0 +1,2 @@
+Lua requires the readline 
+udo apt-get install libreadline6 libreadline6-dev
