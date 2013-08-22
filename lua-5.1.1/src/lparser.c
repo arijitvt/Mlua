@@ -597,6 +597,19 @@ static int explist1 (LexState *ls, expdesc *v) {
   /* explist1 -> expr { `,' expr } */
   int n = 1;  /* at least one expression */
   expr(ls, v);
+  switch(ls->t.token) {
+		      case TK_NUMBER :
+			      printf("The token is number\n");
+		       		 break;
+ 			
+		      case TK_STRING:
+				printf("The token is string\n");
+				break;
+
+		      case TK_NIL:
+				printf("The token is nuil\n");
+				break;
+	      }
   while (testnext(ls, ',')) {
     luaK_exp2nextreg(ls->fs, v);
     expr(ls, v);
